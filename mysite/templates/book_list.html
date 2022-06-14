@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+  {% block content_header %}
+    <h2>Files</h2>
+    <p>
+      <a href="{% url 'upload_book' %}" class="btn btn-primary">Upload</a>
+    </p>
+  {% endblock %}
+
+  <table class="table mb-0">
+    <thead>
+      <tr>
+        <th>Title</th>
+        <th>View</th>
+        <th>Delete</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for book in books %}
+        <tr>
+          <td>{{ book.title }}</td>
+          <td>
+            <div class="view">
+            <a  href="{{ book.title }}/view" class="btn btn-primary btn-sm">
+              View
+            </a>
+          </div>
+          </td>
+          <td>
+            <form method="post" action="{% url 'delete_book' book.pk %}">
+              {% csrf_token %}
+              <button type="submit" class="btn btn-danger btn-sm">Delete</button>
+            </form>
+          </td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+  <script>
+    function myFunction() {
+      
+    }
+    </script>
+{% endblock %}

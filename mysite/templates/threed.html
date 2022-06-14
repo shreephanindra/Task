@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title> {{ file1 }} </title>
+    <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+    <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+    <script nomodule src="https://unpkg.com/@google/model-viewer/dist/model-viewer-legacy.js"></script>
+    <style>
+* {
+    padding: 0;
+    margin: 0;
+    font-family: sans-serif;
+    box-sizing: border-box;
+    color: grey;
+}
+
+#content {
+    height: 500px;
+    width: 700px;
+    position: absolute;
+    left: 12%;
+    top: calc(50% - 250px);
+}
+
+#aSide {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    background-color: rgb(244, 237, 237);
+}
+
+#aSide model-viewer {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgb(243, 239, 239);
+    border: none;
+}
+    </style>
+</head>
+
+<body> 
+        <div id="aSide">
+
+            <model-viewer src="../../media/media/{{ file1 }}" alt="3d Viewer" auto-rotate camera-controls ar ios-src="../../media/media/{{ file1 }}">
+            </model-viewer>
+
+        </div>
+</body>
+
+</html>

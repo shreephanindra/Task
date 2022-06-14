@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h1 class="card-title">Welcome to 3d File viewer Website,{% if user.is_authenticated %}{{ user.username}}{% else %}Stranger{% endif %}!</h1>
+  <strong>Total User registered : </strong> {{ count }}
+
+  
+  
+{% endblock %}
